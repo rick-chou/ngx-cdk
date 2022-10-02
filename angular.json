@@ -1,0 +1,139 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-cdk": {
+      "projectType": "library",
+      "root": "projects/ngx-cdk",
+      "sourceRoot": "projects/ngx-cdk",
+      "prefix": "rz",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-cdk/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-cdk/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-cdk/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-cdk/test.ts",
+            "tsConfig": "projects/ngx-cdk/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-cdk/karma.conf.js"
+          }
+        }
+      }
+    },
+    "ngx-cdk-tester": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ngx-cdk-tester",
+      "sourceRoot": "projects/ngx-cdk-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-cdk-tester",
+            "index": "projects/ngx-cdk-tester/src/index.html",
+            "main": "projects/ngx-cdk-tester/src/main.ts",
+            "polyfills": "projects/ngx-cdk-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-cdk-tester/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ngx-cdk-tester/src/favicon.ico",
+              "projects/ngx-cdk-tester/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": ["projects/ngx-cdk-tester/src/styles.scss", "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-cdk-tester/src/environments/environment.ts",
+                  "with": "projects/ngx-cdk-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-cdk-tester:build:production"
+            },
+            "development": {
+              "browserTarget": "ngx-cdk-tester:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-cdk-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-cdk-tester/src/test.ts",
+            "polyfills": "projects/ngx-cdk-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-cdk-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-cdk-tester/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": ["projects/ngx-cdk-tester/src/favicon.ico", "projects/ngx-cdk-tester/src/assets"],
+            "styles": ["projects/ngx-cdk-tester/src/styles.scss"],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}
