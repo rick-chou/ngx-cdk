@@ -59,11 +59,25 @@
               "projects/ngx-cdk-tester/src/assets",
               {
                 "glob": "**/*",
+                "input": "./projects/ngx-cdk/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./dist/ngx-cdk",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               }
             ],
-            "styles": ["projects/ngx-cdk-tester/src/styles.scss", "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
+            "styles": [
+              "projects/ngx-cdk-tester/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/highlight.js/styles/github.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -72,12 +86,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "5mb"
                 }
               ],
               "fileReplacements": [
@@ -101,6 +115,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "ngx-cdk-tester:build:production"

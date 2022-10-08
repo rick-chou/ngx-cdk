@@ -15,9 +15,11 @@
     "noImplicitThis": true,
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "paths": {
-      "ngx-cdk/*": ["projects/ngx-cdk/*"]
+      "ngx-cdk/*": ["projects/ngx-cdk/*"],
+      "@library/*": ["projects/ngx-cdk-tester/src/app/lib/*"]
     },
     "declaration": false,
     "downlevelIteration": true,

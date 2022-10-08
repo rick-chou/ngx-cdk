@@ -1,0 +1,20 @@
+{
+  "/github": {
+    "target": "https://github.com",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "headers": {
+      "Origin": "https://github.com"
+    }
+  },
+  "/githubusercontent": {
+    "target": "https://raw.githubusercontent.com",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "headers": {
+      "Origin": "https://raw.githubusercontent.com"
+    }
+  }
+}

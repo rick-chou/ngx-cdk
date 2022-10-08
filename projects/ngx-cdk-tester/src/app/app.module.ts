@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
-import { DemoComponents, DemoModules } from './demo.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ...DemoModules,
+    HttpClientModule,
+    MarkdownModule.forRoot(),
     NzLayoutModule,
     NzBreadCrumbModule,
     NzMenuModule,
-    ...DemoComponents,
   ],
   providers: [],
   bootstrap: [AppComponent],

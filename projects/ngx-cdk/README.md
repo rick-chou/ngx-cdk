@@ -1,24 +1,12 @@
-# NgxCdk
+## @rickzhou/ngx-cdk
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+> https://rick-chou.github.io/ngx-cdk/
 
-## Code scaffolding
+### 📦 Install
 
-Run `ng generate component component-name --project ngx-cdk` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-cdk`.
-> Note: Don't forget to add `--project ngx-cdk` or else it will be added to the default project in your `angular.json` file. 
+> npm i @rickzhou/ngx-cdk 
 
-## Build
 
-Run `ng build ngx-cdk` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🌟 Components
 
-## Publishing
-
-After building your library with `ng build ngx-cdk`, go to the dist folder `cd dist/ngx-cdk` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-cdk` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [x] [time-status-chart](https://rick-chou.github.io/ngx-cdk/component/time-status-chart)

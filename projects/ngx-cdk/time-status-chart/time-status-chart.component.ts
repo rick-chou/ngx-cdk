@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, Output } from '@angular/core';
 import { debounce, uniqueId } from 'lodash-es';
 import * as echarts from 'echarts';
-import * as merge from 'deepmerge';
+import deepmerge from 'deepmerge';
 
 import {
   COLORS,
@@ -215,7 +215,7 @@ export class RZTimeStatusChartComponent implements OnChanges, OnDestroy {
           ],
         };
         this.chartInstance = echarts.init(chartDom);
-        this.chartInstance.setOption(merge(_option, this.options));
+        this.chartInstance.setOption(deepmerge(_option, this.options));
         this.onInit.emit(this.chartInstance);
         if (this.isDataZoomSelect) {
           this.chartInstance.dispatchAction({

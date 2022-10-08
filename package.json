@@ -1,13 +1,15 @@
 {
   "name": "ngx-cdk",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngx-cdk && cp -rf dist/ngx-cdk/ projects/ngx-cdk-tester/src/lib/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "publish": "ng build ngx-cdk && bash npm-publish",
+    "deploy-site": "npx ng build ngx-cdk-tester --base-href /ngx-cdk/"
   },
   "private": true,
   "dependencies": {
@@ -19,13 +21,21 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@rickzhou/ngx-cdk": "^0.0.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/marked": "^4.0.7",
     "deepmerge": "^4.2.2",
     "echarts": "^5.4.0",
+    "highlight.js": "^11.6.0",
     "lodash-es": "^4.17.21",
+    "marked": "^4.1.1",
     "moment": "^2.29.4",
     "ng-zorro-antd": "^14.0.0",
     "ngx-echarts": "^14.0.0",
+    "ngx-markdown": "^14.0.1",
+    "remark": "^14.0.2",
     "rxjs": "~7.5.0",
+    "tailwind-safelist-generator": "^1.0.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -38,6 +48,7 @@
     "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~14.0.1",
     "@angular/compiler-cli": "^14.0.0",
+    "@tailwindcss/typography": "^0.5.7",
     "@types/jasmine": "~4.0.0",
     "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "5.37.0",

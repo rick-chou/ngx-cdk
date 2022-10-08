@@ -5,20 +5,28 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   {
     path: '',
+    loadComponent: () => import('./hero.component').then(mod => mod.HeroComponent),
+  },
+  {
+    path: 'component',
     component: HomeComponent,
     children: [
       {
         path: '',
-        redirectTo: '/component/time-status-chart',
+        redirectTo: 'time-status-chart',
         pathMatch: 'full',
       },
       {
-        path: 'component/time-status-chart',
+        path: 'time-status-chart',
         loadComponent: () =>
           import('ngx-cdk/time-status-chart/demo/index').then(mod => mod.RZDemoTimeStatusChartComponent),
         data: { name: 1 },
       },
     ],
+  },
+  {
+    path: 'test',
+    loadComponent: () => import('./test.component').then(mod => mod.TestComponent),
   },
 ];
 
