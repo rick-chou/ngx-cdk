@@ -1,11 +1,22 @@
 {
   "name": "@rickzhou/ngx-cdk",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "description": "Angular 2.0+ Components",
   "peerDependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rick-chou/ngx-cdk"
+  },
+  "keywords": [
+    "angular 2+",
+    "component"
+  ],
+  "homepage": "https://rick-chou.github.io/ngx-cdk/",
+  "license": "MIT"
 }
