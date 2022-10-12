@@ -40,4 +40,3 @@ jobs:
           full_commit_message: ${{ github.event.head_commit.message }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.rick-chou.github.com'
-          force_orphan: true
