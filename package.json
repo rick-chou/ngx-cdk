@@ -1,6 +1,6 @@
 {
   "name": "ngx-cdk",
-  "version": "0.1.1",
+  "version": "14.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "@rickzhou/ngx-cdk": "^0.0.2",
     "@tailwindcss/forms": "^0.5.3",
     "@types/marked": "^4.0.7",
     "deepmerge": "^4.2.2",

@@ -124,7 +124,6 @@ export class RZTimeStatusChartComponent implements OnChanges, OnDestroy {
               right: 20,
               show: this.yAxis.length > this.maxSize,
               end: ((this.maxSize - 1) / this.yAxis.length) * 100,
-              zoomLock: this.yAxis.length > this.maxSize,
               showDetail: false,
               brushSelect: false,
             },

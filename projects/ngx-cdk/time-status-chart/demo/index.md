@@ -1,4 +1,6 @@
-# time-status-chart
+# time-status-chart 
+
+`>=v14.1.0`
 
 > This component is useful when you need to represent a change in state over time
 
